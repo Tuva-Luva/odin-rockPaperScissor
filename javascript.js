@@ -6,10 +6,23 @@
   3. Save the choice in a varible?
 */
 
+let randomNumber = Math.random();
 
 function getComputerChoice() {
-let randomNumber = Math.random();
-return randomNumber;
+ if (randomNumber <= 0.333)  {
+  let rock = "Rock";
+  return rock;
+ }
+
+ else if (randomNumber > 0.333 && randomNumber <= 0.666) {
+  let paper = "Paper";
+  return paper;
+ } 
+
+ else if (randomNumber > 0.666) {
+  let scissor = "Scissor";
+  return scissor;
+ }
 }
 
 console.log(getComputerChoice())
