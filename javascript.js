@@ -11,26 +11,42 @@ X Humans choice:
  3. Create a varible to store the users input in so that it (later) can be compared to the computers output. 
 */
 
+let rock = "Rock";
+let paper = "Paper";
+let scissor = "Scissor";
+
+
 function getComputerChoice() {
   let randomNumber = Math.random();
 
   if (randomNumber <= 0.333)  {
-    let rock = "Rock";
     return rock;
   }
 
   else if (randomNumber > 0.333 && randomNumber <= 0.666) {
-    let paper = "Paper";
     return paper;
   } 
 
   else if (randomNumber > 0.666) {
-    let scissor = "Scissor";
     return scissor;
   }
 }
 
 console.log(getComputerChoice())
 
-function getHumanChoice() {}
+function getHumanChoice() {
+  let message = prompt("Make your choice:")
+  if (message === "Rock") {
+    return rock;
+  }
 
+  else if (message === "Paper") {
+    return paper;
+  }
+
+  else if (message === "Scissor") {
+    return scissor;
+  }
+}
+
+console.log(getHumanChoice())
