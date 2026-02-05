@@ -8,7 +8,12 @@
 X Humans choice: 
  1. Create a function that lets the user write a valid alternative for RPS.
  2. use if/else if. 
- 3. Create a varible to store the users input in so that it (later) can be compared to the computers output. 
+ 3. Create a varible to store the users input in so that it (later) can be compared to the computers output?
+
+X Score
+ 1. Create a varible that store the computers score
+ 2. Create a varible that stores the humans score. 
+ 3. Make sure they start at zero. 
 */
 
 let rock = "Rock";
@@ -50,3 +55,4 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice())
+
