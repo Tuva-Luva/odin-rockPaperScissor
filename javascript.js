@@ -11,14 +11,23 @@ X Humans choice:
  3. Create a varible to store the users input in so that it (later) can be compared to the computers output?
 
 X Score
- 1. Create a varible that store the computers score
- 2. Create a varible that stores the humans score. 
+ 1. Create a varible that is going to store the computers score
+ 2. Create a varible that is going to stores the humans score. 
  3. Make sure they start at zero. 
+
+X Rounds
+ 1. create a function called "playround".
+ 2. Compare the human choice against the computerchoice, make sure it's case sensetive. 
+ 3. Declare a winner depending on what choices are made by the computer and human, also show a you lose or win message.  
+ 4. Add 1 to the score. 
 */
 
-let rock = "Rock";
-let paper = "Paper";
-let scissor = "Scissor";
+const rock = "rock";
+const paper = "paper";
+const scissor = "scissor";
+
+let computerScore = 0;
+let humanScore = 0;
 
 
 function getComputerChoice() {
@@ -37,22 +46,40 @@ function getComputerChoice() {
   }
 }
 
-console.log(getComputerChoice())
-
-function getHumanChoice() {
-  let message = prompt("Make your choice:")
-  if (message === "Rock") {
+function getHumanChoice() { 
+const message = prompt("Make your choice:").toLowerCase(); 
+if (message === "rock") {
     return rock;
   }
 
-  else if (message === "Paper") {
+  else if (message === "paper") {
     return paper;
   }
 
-  else if (message === "Scissor") {
+  else if (message === "scissor") {
     return scissor;
   }
 }
 
-console.log(getHumanChoice())
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
+function playRound(humanSelection, computerSelection) {
+ if(humanSelection === computerSelection) {
+  return "it's a tie";
+ }
+ else if(humanSelection === rock && computerSelection === scissor) {
+  return "You won this round!!" && ++humanScore;
+ }
+ else if(humanSelection === paper && computerSelection === rock) {
+  return "You won this round!!" && ++humanScore;
+ }
+ else if(humanSelection === scissor && computerSelection === paper) {
+  return "You won this round!!" && ++humanScore;
+ }
+ else {
+  return "You lost :(..." && ++computerScore;
+}
+}
+
+console.log(playRound(humanSelection, computerSelection));
