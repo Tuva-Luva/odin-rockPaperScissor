@@ -20,6 +20,11 @@ X Rounds
  2. Compare the human choice against the computerchoice, make sure it's case sensetive. 
  3. Declare a winner depending on what choices are made by the computer and human, also show a you lose or win message.  
  4. Add 1 to the score. 
+
+X Play 5 rounds
+ 1. create a playGame function and put playRound function and score varibles in it's scope. 
+ 2. Call the play game function 5 times to play 5 rounds. 
+ 3. Show a you won/lost message.
 */
 
 let computerScore = 0;
