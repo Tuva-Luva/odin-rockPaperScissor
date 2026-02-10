@@ -62,27 +62,25 @@ const computerSelection = getComputerChoice();
 
 function playRound(humanSelection, computerSelection) {
  if(humanSelection === computerSelection) {
-  return "it's a tie";
+  return "It's a tie.";
  }
  else if(humanSelection === "rock" && computerSelection === "scissor") {
  humanScore++;
- return "You won, rock beats scissor!";
+ return "You won. Rock beats scissor.";
 
  }
  else if(humanSelection === "paper" && computerSelection === "rock") {
  humanScore++;
- return "You won, paper beats rock!";
+ return "You won! Paper beats rock.";
  }
  else if(humanSelection === "scissor" && computerSelection === "paper") {
  humanScore++ ;
- return "You won, scissors beats paper!";
+ return "You won! Scissors beats paper.";
  }
  else {
  computerScore++;
- return `You lose! ${computerSelection} beats ${humanSelection}`;
+ return `You lose! ${computerSelection} beats ${humanSelection}.`;
  }
 }
 
 console.log(playRound(humanSelection, computerSelection))
-console.log(humanScore)
-console.log(computerScore)
