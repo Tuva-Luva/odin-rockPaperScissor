@@ -22,10 +22,6 @@ X Rounds
  4. Add 1 to the score. 
 */
 
-const rock = "rock";
-const paper = "paper";
-const scissor = "scissor";
-
 let computerScore = 0;
 let humanScore = 0;
 
@@ -34,30 +30,30 @@ function getComputerChoice() {
   let randomNumber = Math.random();
 
   if (randomNumber <= 0.333)  {
-    return rock;
+    return "rock";
   }
 
   else if (randomNumber > 0.333 && randomNumber <= 0.666) {
-    return paper;
+    return "paper";
   } 
 
   else if (randomNumber > 0.666) {
-    return scissor;
+    return "scissor";
   }
 }
 
 function getHumanChoice() { 
 const message = prompt("Make your choice:").toLowerCase(); 
 if (message === "rock") {
-    return rock;
+    return "rock";
   }
 
   else if (message === "paper") {
-    return paper;
+    return "paper";
   }
 
   else if (message === "scissor") {
-    return scissor;
+    return "scissor";
   }
 }
 
@@ -68,18 +64,25 @@ function playRound(humanSelection, computerSelection) {
  if(humanSelection === computerSelection) {
   return "it's a tie";
  }
- else if(humanSelection === rock && computerSelection === scissor) {
-  return "You won this round!!" && ++humanScore;
+ else if(humanSelection === "rock" && computerSelection === "scissor") {
+ humanScore++;
+ return "You won, rock beats scissor!";
+
  }
- else if(humanSelection === paper && computerSelection === rock) {
-  return "You won this round!!" && ++humanScore;
+ else if(humanSelection === "paper" && computerSelection === "rock") {
+ humanScore++;
+ return "You won, paper beats rock!";
  }
- else if(humanSelection === scissor && computerSelection === paper) {
-  return "You won this round!!" && ++humanScore;
+ else if(humanSelection === "scissor" && computerSelection === "paper") {
+ humanScore++ ;
+ return "You won, scissors beats paper!";
  }
  else {
-  return "You lost :(..." && ++computerScore;
-}
+ computerScore++;
+ return `You lose! ${computerSelection} beats ${humanSelection}`;
+ }
 }
 
-console.log(playRound(humanSelection, computerSelection));
+console.log(playRound(humanSelection, computerSelection))
+console.log(humanScore)
+console.log(computerScore)
