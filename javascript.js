@@ -1,36 +1,3 @@
-/*pseudocode:
-
- X Computers choice:
-  1. Create a function that outputs a random number between 0 and 1 (and a varible to store that output.  
-  2. Translate that number to rock, papper or scissor. 
-  3. Save the choice in a varible?
-
-X Humans choice: 
- 1. Create a function that lets the user write a valid alternative for RPS.
- 2. use if/else if. 
- 3. Create a varible to store the users input in so that it (later) can be compared to the computers output?
-
-X Score
- 1. Create a varible that is going to store the computers score
- 2. Create a varible that is going to stores the humans score. 
- 3. Make sure they start at zero. 
-
-X Rounds
- 1. create a function called "playround".
- 2. Compare the human choice against the computerchoice, make sure it's case sensetive. 
- 3. Declare a winner depending on what choices are made by the computer and human, also show a you lose or win message.  
- 4. Add 1 to the score. 
-
-X Play 5 rounds
- 1. create a playGame function and put playRound function and score varibles in it's scope. 
- 2. Call the play game function 5 times to play 5 rounds. 
- 3. Show a you won/lost message.
-*/
-
-let computerScore = 0;
-let humanScore = 0;
-
-
 function getComputerChoice() {
   let randomNumber = Math.random();
 
@@ -48,16 +15,16 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() { 
-const message = prompt("Make your choice:").toLowerCase(); 
-if (message === "rock") {
+const input = prompt("Make your choice:").toLowerCase(); 
+if (input === "rock") {
     return "rock";
   }
 
-  else if (message === "paper") {
+  else if (input === "paper") {
     return "paper";
   }
 
-  else if (message === "scissor") {
+  else if (input === "scissor") {
     return "scissor";
   }
 }
@@ -65,14 +32,17 @@ if (message === "rock") {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
+function playGame() {
+let computerScore = 0;
+let humanScore = 0;
+
 function playRound(humanSelection, computerSelection) {
  if(humanSelection === computerSelection) {
   return "It's a tie.";
  }
  else if(humanSelection === "rock" && computerSelection === "scissor") {
  humanScore++;
- return "You won. Rock beats scissor.";
-
+ return "You won! Rock beats scissor.";
  }
  else if(humanSelection === "paper" && computerSelection === "rock") {
  humanScore++;
@@ -87,5 +57,5 @@ function playRound(humanSelection, computerSelection) {
  return `You lose! ${computerSelection} beats ${humanSelection}.`;
  }
 }
-
-console.log(playRound(humanSelection, computerSelection))
+return playRound(humanSelection, computerSelection);
+}
