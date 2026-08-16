@@ -61,7 +61,6 @@ if (input === "rock") {
     }
   }
 
-
 function playGame() {
   
   if (humanScore === computerScore){
@@ -76,3 +75,20 @@ function playGame() {
 }
 
 playGame();
+
+
+
+
+
+
+
+//--- DOM MANIPULATION ---
+/*
+Pseudo code:
+1. add event listener that activates when the button is clicked. 
+2. Add a way to display the result (dont forget to delete console.logs!!)
+3. Also make sure the div(s) are displaying the current score and choices during the game. 
+*/
+
+
+
