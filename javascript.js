@@ -91,17 +91,17 @@ Pseudo code:
 
 const selectRock = document.querySelector(`#Rock`);
 let chooseRock = selectRock.addEventListener(`click`, () => {
-  console.log(`test1`);
+  console.log(playRound("rock", getComputerChoice()));
 });
 
 const selectPaper = document.querySelector(`#Paper`);
 let choosePaper = selectPaper.addEventListener(`click`, () => {
-  console.log(`test2`);
+    console.log(playRound("paper", getComputerChoice()));
 });
 
 const selectScissors = document.querySelector(`#Scissors`);
 let chooseScissors = selectScissors.addEventListener(`click`, () => {
-  console.log(`test3`);
+    console.log(playRound("scissor", getComputerChoice()));
 });
 
 
