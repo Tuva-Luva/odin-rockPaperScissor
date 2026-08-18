@@ -74,7 +74,6 @@ function playGame() {
   }
 }
 
-playGame();
 
 
 
@@ -89,6 +88,21 @@ Pseudo code:
 2. Add a way to display the result (dont forget to delete console.logs!!)
 3. Also make sure the div(s) are displaying the current score and choices during the game. 
 */
+
+const selectRock = document.querySelector(`#Rock`);
+let chooseRock = selectRock.addEventListener(`click`, () => {
+  console.log(`test1`);
+});
+
+const selectPaper = document.querySelector(`#Paper`);
+let choosePaper = selectPaper.addEventListener(`click`, () => {
+  console.log(`test2`);
+});
+
+const selectScissors = document.querySelector(`#Scissors`);
+let chooseScissors = selectScissors.addEventListener(`click`, () => {
+  console.log(`test3`);
+});
 
 
 
